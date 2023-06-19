@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(#8d2848, #1D2671);
+}
+
+.wrapper {
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background: #242424;
+  padding: 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h2 {
+  position: relative;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.wrapper form {
+  margin-top: 30px;
+}
+
+.wrapper form .input-box {
+  height: 52px;
+  margin: 18px 0;
+}
+
+form .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #323232;
+  border: none;
+  border-radius: 6px;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50%; /* adjust the height to fit better within the input-box */
+  width: 60px; /* adjust the width as needed */
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #323232;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.input-box button:hover {
+  background-color: #4CAF50;
+}
+
+
+form .input-box input[type="button"] {
+  height: 100%;
+  width: 50px;  /* Adjust width to fit the button's size */
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
+  background: #323232;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;  /* To show it's clickable */
+  outline: none;  /* Remove focus outline */
+}
+
+.input-box input::placeholder {
+  color: #bdbdbd;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border: 2px solid #4CAF50;
+}
+
+form .text {
+  color: #9e9e9e;
+}
+
+.input-box.button input {
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-box.button input:hover {
+  background-color: #45a049;
+}
+
+form .text h3 {
+  color: #9e9e9e;
+  width: 100%;
+  text-align: center;
+}
+
+form .text h3 a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+form .text h3 a:hover {
+  text-decoration: underline;
+}

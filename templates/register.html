@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/javascript/validation.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    {% if alert_message %}
+    <script>alert("{{ alert_message }}");
+        console.log("Alert executed");
+    </script>
+
+    {% endif %}
+    <form action="/register" method="POST" onsubmit="return validateForm()">
+      <div class="input-box">
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="username" id="username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="card_number" id="card_number" oninput="formatCardNumber(this)" placeholder="Enter Credit/Debit Card Number" required>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" placeholder="Create password" required>
+        <button type="button" onclick="togglePasswordVisibility('password')" class="toggle-password">
+            <i id="toggle-password-icon-password" class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="input-box">
+        <input type="password" name="confirm_password" id="confirm_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" placeholder="Confirm password" required>
+        <button type="button" onclick="togglePasswordVisibility('confirm_password')" class="toggle-password">
+            <i id="toggle-password-icon-confirm_password" class="fas fa-eye"></i>
+        </button>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register Now">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="/login">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

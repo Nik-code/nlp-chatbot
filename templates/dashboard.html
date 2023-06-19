@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/dashboard.css">
+  <style>
+    .card.hidden {
+      display: none;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Dashboard</h2>
+      <ul>
+        <li><button id="myinfo">My Information</button></li>
+        <li><button id="chatbot">Chatbot</button></li>
+        <li><button id="logout">Log Out</button></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h1>Welcome, {{ username }}</h1>
+      </div>
+      <br>
+      <div class="card hidden" id="infoCard">
+        <p>
+          <span class="label"><b>Username:</b></span>
+          <span class="value">{{ username }}</span>
+        </p>
+        <p>
+          <span class="label"><b>Full Name:</b></span>
+          <span class="value">{{ name }}</span>
+        </p>
+        <p>
+          <span class="label"><b>Email:</b></span>
+          <span class="value">{{ email }}</span>
+        </p>
+        <p>
+          <span class="label"><b>Card Number:</b></span>
+          <span class="value">{{ card_number }}</span>
+        </p>
+      </div>
+        <br>
+      <div class="card hidden" id="chatbotCard">
+        <h2>Chatbot</h2>
+        <div class="chatbot-container">
+          <div class="chatbot-chat-window" id="chatbot-chat-window">
+            <div class="chat-container user">
+            </div>
+            <div class="chat-container bot">
+                <div class="chat-message">Hey, How may I help you?</div>
+            </div>
+          </div>
+            <br>
+          <form id="chatbot-chat-form">
+            <input type="text" id="chatbot-query-input" class="chatbot-query-input" placeholder="Type your question..." required>
+            <button type="submit" class="chatbot-submit-button">Send</button>
+              <div class="response-toggle">
+                <input type="checkbox" id="toggleResponse" name="toggleResponse">
+                <label for="toggleResponse">Show 5 responses</label>
+              </div>
+          </form>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+  <script src="../static/javascript/dashboard.js"></script>
+</body>
+</html>
